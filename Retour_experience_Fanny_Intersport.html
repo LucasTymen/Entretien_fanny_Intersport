@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<title>Retour d'expérience — Rayon textile</title>
+
+<style>
+:root {
+    --blue: #1858d8;
+    --blue-dark: #103d9a;
+    --purple: #6845c7;
+    --bg: #f3f5f9;
+    --card: #ffffff;
+    --text: #20242c;
+    --muted: #667085;
+
+    --green-bg: #e9f8ee;
+    --green: #21844a;
+
+    --yellow-bg: #fff7d6;
+    --yellow: #9a7200;
+
+    --cyan-bg: #e8f5ff;
+    --cyan: #1475b8;
+
+    --red-bg: #ffeded;
+    --red: #bd3030;
+
+    --purple-bg: #f0eaff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.48;
+    padding-bottom: 35px;
+}
+
+.header {
+    background: linear-gradient(135deg, #1858d8, #6845c7);
+    color: white;
+    padding: 25px 18px 22px;
+}
+
+.header h1 {
+    font-size: 24px;
+    line-height: 1.15;
+    margin: 0 0 7px;
+}
+
+.header p {
+    margin: 0;
+    opacity: .9;
+    font-size: 14px;
+}
+
+.container {
+    max-width: 720px;
+    margin: auto;
+    padding: 14px;
+}
+
+/* FIL CONDUCTEUR */
+
+mission {
+    display: block;
+}
+
+.mission {
+    background: white;
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 12px rgba(0,0,0,.06);
+}
+
+.mission-title {
+    font-weight: 800;
+    color: var(--blue);
+    margin-bottom: 8px;
+}
+
+.mantra {
+    font-size: 17px;
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+/* ACCORDÉONS */
+
+.accordion {
+    width: 100%;
+    border: 0;
+    border-radius: 13px;
+    padding: 17px 16px;
+    margin: 6px 0;
+    background: linear-gradient(135deg, var(--blue), var(--purple));
+    color: white;
+    font-size: 17px;
+    font-weight: 800;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 3px 9px rgba(30,60,150,.16);
+}
+
+.accordion::after {
+    content: "＋";
+    font-size: 21px;
+}
+
+.accordion.active::after {
+    content: "−";
+}
+
+.panel {
+    display: none;
+    background: white;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 0 0 13px 13px;
+    box-shadow: 0 3px 12px rgba(0,0,0,.05);
+}
+
+.sub {
+    width: 100%;
+    border: 0;
+    background: #edf0f5;
+    color: #333a46;
+    padding: 14px;
+    margin: 5px 0;
+    border-radius: 9px;
+    text-align: left;
+    font-size: 15px;
+    font-weight: 750;
+    cursor: pointer;
+}
+
+.sub::after {
+    content: " ▾";
+    float: right;
+}
+
+.sub.active {
+    background: #dfe5ef;
+}
+
+.subpanel {
+    display: none;
+    padding: 5px 3px 10px;
+}
+
+/* BLOCS */
+
+.box {
+    border-radius: 9px;
+    padding: 12px;
+    margin: 9px 0;
+    font-size: 15px;
+}
+
+.fact {
+    background: var(--green-bg);
+    border-left: 4px solid var(--green);
+}
+
+.feeling {
+    background: var(--yellow-bg);
+    border-left: 4px solid #e6ad00;
+}
+
+.question {
+    background: var(--cyan-bg);
+    border-left: 4px solid var(--cyan);
+}
+
+.avoid {
+    background: var(--red-bg);
+    border-left: 4px solid var(--red);
+}
+
+.say {
+    background: var(--purple-bg);
+    border-left: 4px solid var(--purple);
+}
+
+.label {
+    display: block;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: .04em;
+    margin-bottom: 5px;
+}
+
+.fact .label { color: var(--green); }
+.feeling .label { color: var(--yellow); }
+.question .label { color: var(--cyan); }
+.avoid .label { color: var(--red); }
+.say .label { color: var(--purple); }
+
+.quote {
+    font-size: 17px;
+    font-weight: 750;
+}
+
+ul {
+    padding-left: 21px;
+    margin: 8px 0;
+}
+
+li {
+    margin: 7px 0;
+}
+
+.small {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #e4e7ec;
+    margin: 15px 0;
+}
+
+/* CHRONOLOGIE */
+
+.date {
+    display: grid;
+    grid-template-columns: 95px 1fr;
+    gap: 8px;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.date:last-child {
+    border-bottom: 0;
+}
+
+.date strong {
+    color: var(--blue);
+}
+
+/* LÉGENDE */
+
+.legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 12px;
+}
+
+.badge {
+    padding: 6px 9px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.badge.fact-badge {
+    background: var(--green-bg);
+    color: var(--green);
+}
+
+.badge.feeling-badge {
+    background: var(--yellow-bg);
+    color: var(--yellow);
+}
+
+.badge.check-badge {
+    background: var(--cyan-bg);
+    color: var(--cyan);
+}
+
+/* ÉVÉNEMENT MIS EN AVANT */
+
+.highlight-event {
+    background: linear-gradient(135deg, #fff7d6, #fff);
+    border: 2px solid #e6ad00;
+    border-radius: 12px;
+    padding: 14px;
+    margin: 12px 0;
+}
+
+.highlight-event .event-date {
+    color: #9a7200;
+    font-weight: 900;
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.highlight-event .event-title {
+    font-weight: 900;
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+/* STATISTIQUES */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin: 12px 0;
+}
+
+.stat {
+    background: white;
+    border-radius: 11px;
+    padding: 12px 7px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,.07);
+}
+
+.stat strong {
+    display: block;
+    color: var(--blue);
+    font-size: 22px;
+}
+
+.stat span {
+    font-size: 11px;
+    color: var(--muted);
+}
+
+@media (max-width: 420px) {
+    .stats {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 700px) {
+    .header {
+        text-align: center;
+    }
+
+    .header h1 {
+        font-size: 30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+    <h1>Retour d'expérience</h1>
+    <p>Fonctionnement du rayon textile — Intersport Belle Épine</p>
+</header>
+
+<main class="container">
+
+<div class="mission">
+    <div class="mission-title">OBJET DE CE RETOUR</div>
+    <div class="mantra">
+        Je ne conteste pas la décision concernant ma période d'essai.<br>
+        Je souhaite transmettre à la direction plusieurs observations<br>
+        issues de mon expérience dans le rayon textile.
+    </div>
+
+    <p class="small">
+        Ce document distingue volontairement les observations directes,
+        les appréciations personnelles et les éléments que seule
+        la direction est en mesure de vérifier.
+    </p>
+
+    <div class="legend">
+        <span class="badge fact-badge">● Observation directe</span>
+        <span class="badge feeling-badge">● Appréciation</span>
+        <span class="badge check-badge">● Point à vérifier</span>
+    </div>
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 1 -->
+<!-- ===================================================== -->
+
+<button class="accordion">
+    👤 1. MON PROPRE BILAN
+</button>
+
+<div class="panel">
+
+    <button class="sub">🧠 Oublis</button>
+    <div class="subpanel">
+
+        <div class="fact">
+            <span class="label">POSITION</span>
+
+            Je ne cherche pas à présenter ma période d'essai
+            comme irréprochable. J'ai commis certains oublis,
+            je les reconnais et j'ai cherché à les corriger
+            lorsqu'ils m'ont été signalés.
+        </div>
+
+    </div>
+
+
+    <button class="sub">⏱️ Retards / pauses</button>
+    <div class="subpanel">
+
+        <div class="fact">
+            <span class="label">FAIT</span>
+
+            Je reconnais le retard dont nous avons déjà parlé.
+        </div>
+
+        <div class="fact">
+            <span class="label">MA POSITION</span>
+
+            Je conteste en revanche l'idée de retards ou dépassements
+            de pauses <strong>fréquents</strong>.<br><br>
+
+            J'utilise habituellement un minuteur pour mes pauses déjeuner.
+        </div>
+
+        <div class="question">
+            <span class="label">POINT À CLARIFIER</span>
+
+            « Quels faits précis ont conduit à considérer
+            que ces comportements étaient fréquents ? »
+        </div>
+
+    </div>
+
+
+    <button class="sub">💡 Initiative / communication</button>
+    <div class="subpanel">
+
+        <div class="fact">
+            <span class="label">CE QUE J'ACCEPTE</span>
+
+            Une initiative peut devoir être validée.<br>
+            Ma communication peut être améliorée.
+        </div>
+
+        <div class="feeling">
+            <span class="label">MON RESSENTI</span>
+
+            Les attentes ne m'ont pas toujours semblé clairement définies :
+            on pouvait me reprocher une initiative tout en me donnant
+            parfois peu d'accompagnement sur la manière d'exécuter
+            certaines tâches.
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 2 -->
+<!-- ===================================================== -->
+
+<button class="accordion">
+    👔 2. MANAGEMENT
+</button>
+
+<div class="panel">
+
+    <button class="sub">🎓 Intégration / formation</button>
+    <div class="subpanel">
+
+        <div class="fact">
+            <span class="label">CE QUE J'AI OBSERVÉ</span>
+
+            Billy et moi avons commencé le même jour.<br><br>
+
+            Certaines tâches nous étaient confiées sans que leur réalisation
+            soit systématiquement expliquée.
+        </div>
+
+        <div class="fact">
+            <span class="label">TRANSMISSION</span>
+
+            Une partie importante de mon apprentissage est venue
+            des autres vendeurs :
+            <strong>Zachary, Valentin, Quentin, Alexandre, Nicolas</strong>
+            et d'autres collaborateurs.
+        </div>
+
+        <div class="feeling">
+            <span class="label">APPRÉCIATION</span>
+
+            Mon expérience est que mon apprentissage quotidien
+            s'est largement appuyé sur les autres vendeurs déjà présents
+            dans le magasin.
+        </div>
+
+        <div class="question">
+            <span class="label">POINT À VÉRIFIER</span>
+
+            « Quelles sont normalement les modalités d'intégration,
+            d'accompagnement et de formation d'un nouveau vendeur
+            pendant sa période d'essai ? »
+        </div>
+
+    </div>
+
+
+    <button class="sub">👋 Bonjour / relationnel / clients</button>
+    <div class="subpanel">
+
+        <div class="fact">
+            <span class="label">OBSERVATION</span>
+
+            J'ai constaté à plusieurs reprises que des collaborateurs
+            saluaient M'Balia sans obtenir de réponse.
+        </div>
+
+        <div class="fact">
+            <span class="label">CÔTÉ CLIENT</span>
+
+            J'ai également observé certaines situations où des clients
+            n'obtenaient pas systématiquement de réponse à leur
+            « bonjour », ou recevaient un accueil que j'ai trouvé
+            très limité.
+        </div>
+
+        <div class="feeling">
+            <span class="label">MON ANALYSE</span>
+
+            Un bonjour sans réponse, pris isolément, est anecdotique.<br><br>
+
+            Ce qui m'interpelle est sa répétition éventuelle,
+            surtout dans un métier de vente et lorsqu'il s'agit
+            d'une responsable qui encadre des vendeurs.
+        </div>
+
+        <div class="question">
+            <span class="label">QUESTION SOULEVÉE</span>
+
+            « Quel niveau d'exemplarité relationnelle et commerciale
+            attendez-vous d'un responsable de rayon, vis-à-vis de son
+            équipe comme des clients ? »
+        </div>
+
+    </div>
+
+
+    <button class="sub">🗣️ Informations rapportées</button>
+    <div class="subpanel">
+
+        <div class="fact">
+            <span class="label">ÉLÉMENT RAPPORTÉ</span>
+
+            On m'a indiqué qu'il avait été rapporté que j'étais
+            régulièrement en retard et que je dépassais fréquemment
+            mes pauses.
+        </div>
+
+        <div class="question">
+            <span class="label">POINT À CLARIFIER</span>
+
+            « Quels sont exactement les faits qui ont été remontés
+            concernant mon comportement ou mon travail ?
+            Ont-ils été directement constatés ou rapportés par des tiers ? »
+        </div>
+
+    </div>
+
+
+    <button class="sub">💡 Initiatives refusées puis reprises</button>
+    <div class="subpanel">
+
+        <div class="feeling">
+            <span class="label">MON RESSENTI</span>
+
+            Plusieurs initiatives proposées ont d'abord été refusées.<br>
+            J'ai ensuite vu certaines idées similaires mises en œuvre.
+        </div>
+
+        <div class="feeling">
+            <span class="label">APPRÉCIATION</span>
+
+            « Cela m'a donné le sentiment qu'on pouvait me reprocher
+            de prendre des initiatives tout en ne m'encourageant
+            pas réellement à en prendre. »
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 3 -->
+<!-- ===================================================== -->
+
+<button class="accordion">
+    📅 3. ORGANISATION & PLANNINGS
+</button>
+
+<div class="panel">
+
+    <button class="sub">☀️ Dimanches</button>
+    <div class="subpanel">
+
+        <div class="fact">
+            <span class="label">FAIT</span>
+
+            À mon arrivée, j'avais indiqué à Fanny puis à M'Balia
+            que j'étais volontaire pour travailler le dimanche,
+            notamment pour des raisons financières.
+        </div>
+
+        <div class="fact">
+            <span class="label">NUANCE IMPORTANTE</span>
+
+            Cette préférence a d'abord été prise en compte :
+            j'ai effectivement travaillé plusieurs dimanches.
+        </div>
+
+        <div class="feeling">
+            <span class="label">CE QUI M'INTERPELLE</span>
+
+            Ces affectations ont ensuite diminué alors que les fermetures
+            restaient fréquentes.
+        </div>
+
+        <div class="question">
+            <span class="label">POINT À VÉRIFIER</span>
+
+            « Quels critères déterminent la répartition des dimanches,
+            des ouvertures et des fermetures ? »
+        </div>
+
+    </div>
+
+
+    <button class="sub">🌙 Fermetures — mes repères</button>
+    <div class="subpanel">
+
+        <div class="say">
+            <span class="label">MON POINT</span>
+
+            Fermetures fréquentes, mais je ne suis
+            <strong>ni le seul ni systématiquement</strong> en fermeture.
+        </div>
+
+        <div class="stats">
+            <div class="stat">
+                <strong>25</strong>
+                <span>journées observées<br>S30–S34</span>
+            </div>
+
+            <div class="stat">
+                <strong>14</strong>
+                <span>fermetures<br>S30–S34</span>
+            </div>
+
+            <div class="stat">
+                <strong>56 %</strong>
+                <span>des journées<br>S30–S34</span>
+            </div>
+
+            <div class="stat">
+                <strong>4/5</strong>
+                <span>dimanches travaillés<br>S30–S34</span>
+            </div>
+
+            <div class="stat">
+                <strong>18</strong>
+                <span>fermetures<br>S30–S34 + S36</span>
+            </div>
+
+            <div class="stat">
+                <strong>60 %</strong>
+                <span>des journées<br>S30–S34 + S36</span>
+            </div>
+        </div>
+
+        <p class="small">
+            Données établies à partir des plannings examinés.
+            La semaine S35 n'est pas intégrée au calcul synthétique
+            en raison des modifications de planning restant à clarifier.
+            D'autres collaborateurs effectuaient également
+            régulièrement des fermetures.
+        </p>
+
+        <div class="date">
+            <strong>27/07 → 02/08</strong>
+            <span>Fermetures 30/07 + 01/08 ; dimanche 02/08 travaillé.</span>
+        </div>
+
+        <div class="date">
+            <strong>03 → 09/08</strong>
+            <span>Fermetures 03, 05, 08 ; ouvertures 06 et 09.</span>
+        </div>
+
+        <div class="date">
+            <strong>10 → 16/08</strong>
+            <span>Fermetures 10, 12, 15.</span>
+        </div>
+
+        <div class="date">
+            <strong>17 → 23/08</strong>
+            <span>Fermetures 17, 19, 22 ; journée 20 ; ouverture dimanche 23.</span>
+        </div>
+
+        <div class="date">
+            <strong>24 → 30/08</strong>
+            <span>Plusieurs fermetures + modifications de planning à vérifier.</span>
+        </div>
+
+        <div class="date">
+            <strong>31/08 → 06/09</strong>
+            <span>Plusieurs fermetures de nouveau prévues.</span>
+        </div>
+
+        <div class="question">
+            <span class="label">QUESTION FANNY</span>
+
+            « Pouvez-vous regarder si ma répartition des ouvertures,
+            fermetures et dimanches est comparable à celle des autres
+            vendeurs sur la même période ? »
+        </div>
+
+    </div>
+
+
+    <button class="sub">⚡ Effectif & forte affluence</button>
+    <div class="subpanel">
+
+        <div class="date">
+            <strong>17 août</strong>
+            <span>Noté : seul en rayon sur une partie de la fermeture.</span>
+        </div>
+
+        <div class="date">
+            <strong>19 août</strong>
+            <span>Noté : seulement deux personnes sur une partie de la fermeture.</span>
+        </div>
+
+        <div class="date">
+            <strong>20 août</strong>
+            <span>Noté : seul sur une partie de la matinée.</span>
+        </div>
+
+        <div class="highlight-event">
+            <div class="event-date">31 AOÛT 2026</div>
+            <div class="event-title">
+                Journée de très forte affluence liée à la rentrée
+            </div>
+
+            Après le départ de M'Balia, qui était souffrante,
+            nous étions deux vendeurs pour couvrir le textile.
+            <br><br>
+
+            Mon binôme a cependant été sollicité de manière répétée
+            en renfort caisse.
+            <br><br>
+
+            <strong>
+                En pratique, je me suis ainsi retrouvé seul
+                à assurer le rayon textile pendant une durée cumulée
+                que j'estime à environ 2 à 3 heures,
+                dans un contexte de forte fréquentation.
+            </strong>
+        </div>
+
+        <div class="question">
+            <span class="label">POINT À EXAMINER</span>
+
+            Lors des périodes de forte affluence, quel effectif
+            est normalement prévu pour assurer simultanément
+            la présence au rayon textile, le conseil client,
+            le rangement et les éventuels renforts caisse ?
+        </div>
+
+        <div class="feeling">
+            <span class="label">POURQUOI CET ÉPISODE M'INTERPELLE</span>
+
+            Le départ de M'Balia pour raison de santé n'est pas
+            en lui-même le sujet.
+            <br><br>
+
+            La question soulevée est la capacité de l'organisation
+            du rayon à absorber simultanément une absence imprévue,
+            une forte fréquentation et les besoins de renfort en caisse.
+        </div>
+
+        <p class="small">
+            Les éléments des 17, 19 et 20 août proviennent de mes
+            annotations personnelles et identifient des situations
+            que la direction peut confronter aux plannings
+            et aux présences effectives.
+        </p>
+
+    </div>
+
+
+    <button class="sub">🔄 Modifications de planning</button>
+    <div class="subpanel">
+
+        <div class="fact">
+            <span class="label">OBSERVATION</span>
+
+            J'ai constaté plusieurs modifications après
+            l'établissement des premières versions du planning.
+        </div>
+
+        <div class="question">
+            <span class="label">CE QUE JE VEUX COMPRENDRE</span>
+
+            Qui décide ?<br>
+            Pour quel motif ?<br>
+            Comment le salarié est-il informé ?<br>
+            Dans quel délai ?
+        </div>
+
+        <div class="fact">
+            <span class="label">POSITION</span>
+
+            « Je ne conclus pas moi-même à une irrégularité.
+            Je demande que les modifications constatées soient
+            confrontées aux règles normalement appliquées. »
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 4 -->
+<!-- ===================================================== -->
+
+<button class="accordion">
+    🔄 4. TURNOVER & STABILITÉ DU RAYON
+</button>
+
+<div class="panel">
+
+    <button class="sub">👥 Ce que je sais / ne sais pas</button>
+    <div class="subpanel">
+
+        <div class="fact">
+            <span class="label">ÉLÉMENT RAPPORTÉ</span>
+
+            Plusieurs collaborateurs m'ont parlé spontanément
+            du turnover et des périodes d'essai dans le rayon.
+        </div>
+
+        <div class="feeling">
+            <span class="label">CE QUE JE NE SAIS PAS</span>
+
+            Je n'ai pas accès aux données RH.<br><br>
+
+            Je ne peux donc pas affirmer que le nombre de départs
+            ou de ruptures est anormal.
+        </div>
+
+        <div class="say">
+            <span class="label">MON POINT</span>
+
+            « Le fait que le sujet soit suffisamment présent pour
+            être évoqué spontanément avec un nouveau salarié
+            m'a simplement interpellé. »
+        </div>
+
+    </div>
+
+
+    <button class="sub">🔎 Ce que la direction peut vérifier</button>
+    <div class="subpanel">
+
+        <div class="question">
+            <span class="label">DONNÉES À REGARDER</span>
+
+            • Nombre de recrutements<br>
+            • Nombre de départs rapides<br>
+            • Périodes d'essai interrompues<br>
+            • Durée moyenne avant rupture<br>
+            • Départs volontaires<br>
+            • Motifs lorsqu'ils sont connus
+        </div>
+
+        <div class="question">
+            <span class="label">INTERPRÉTATION PROPOSÉE</span>
+
+            « Si les chiffres montrent un renouvellement normal,
+            mon interrogation sera levée. S'ils montrent une rotation
+            particulièrement importante, il peut être utile d'en
+            rechercher les causes. »
+        </div>
+
+    </div>
+
+
+    <button class="sub">💶 Coût pour le magasin</button>
+    <div class="subpanel">
+
+        <div class="fact">
+            <span class="label">LOGIQUE</span>
+
+            Recruter → intégrer → apprendre le rayon →
+            mobiliser les anciens → rupture éventuelle →
+            recruter et former à nouveau.
+        </div>
+
+        <div class="feeling">
+            <span class="label">QUESTION DE GESTION</span>
+
+            Si cela est exceptionnel : fonctionnement normal.<br><br>
+
+            Si cela devient récurrent :
+            <strong>quel coût et quelles causes ?</strong>
+        </div>
+
+        <div class="question">
+            <span class="label">QUESTION DE GESTION</span>
+
+            « Si les ruptures sont effectivement nombreuses,
+            les causes de cette rotation ont-elles déjà été analysées ? »
+        </div>
+
+    </div>
+
+
+    <button class="sub">📈 Hypothèse périodes commerciales</button>
+    <div class="subpanel">
+
+        <div class="feeling">
+            <span class="label">HYPOTHÈSE — PAS UNE ACCUSATION</span>
+
+            Vérifier éventuellement la concordance entre :
+            <br><br>
+
+            <strong>dates de recrutement → périodes commerciales
+            nécessitant davantage de personnel → dates de rupture.</strong>
+        </div>
+
+        <div class="question">
+            <span class="label">LIMITES DE CETTE PISTE</span>
+
+            « Je n'ai pas les données permettant d'affirmer qu'un lien existe.
+            C'est justement quelque chose que seule la direction
+            peut vérifier. »
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 5 -->
+<!-- ===================================================== -->
+
+<button class="accordion">
+    🧩 5. CLIMAT COLLECTIF
+</button>
+
+<div class="panel">
+
+    <button class="sub">👥 Climat relationnel observé</button>
+    <div class="subpanel">
+
+        <div class="feeling">
+            <span class="label">MON OBSERVATION / RESSENTI</span>
+
+            J'ai eu le sentiment que certains collaborateurs limitaient
+            leurs interactions avec M'Balia ou préféraient parfois
+            s'adresser à d'autres personnes.
+        </div>
+
+        <div class="question">
+            <span class="label">VÉRIFICATION POSSIBLE</span>
+
+            « Je ne veux pas parler à la place des autres salariés.
+            Si vous souhaitez vérifier cette perception,
+            le mieux est de leur poser directement la question. »
+        </div>
+
+    </div>
+
+
+    <button class="sub">👤 Parole des autres collaborateurs</button>
+    <div class="subpanel">
+
+        <div class="say">
+            <span class="label">PRINCIPE</span>
+
+            Certaines situations m'ont interpellé,
+            mais je ne veux attribuer à personne une opinion
+            qu'il n'a pas lui-même exprimée devant la direction.
+        </div>
+
+        <div class="fact">
+            <span class="label">DONC</span>
+
+            Leur retour direct me paraît plus pertinent
+            que mon interprétation de leur situation.
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 6 -->
+<!-- ===================================================== -->
+
+<button class="accordion">
+    🔎 6. ÉLÉMENTS QUE LA DIRECTION PEUT VÉRIFIER
+</button>
+
+<div class="panel">
+
+    <button class="sub">📊 Vérifier les éléments objectifs</button>
+    <div class="subpanel">
+
+        <div class="question">
+            <span class="label">À VÉRIFIER</span>
+
+            ✓ Plannings et évolution<br>
+            ✓ Ouvertures / fermetures / dimanches<br>
+            ✓ Modifications de planning<br>
+            ✓ Effectifs lors des périodes de forte affluence<br>
+            ✓ Renforts caisse et couverture du rayon textile<br>
+            ✓ Intégration / formation<br>
+            ✓ Recrutements et départs<br>
+            ✓ Périodes d'essai interrompues<br>
+            ✓ Durée avant rupture<br>
+            ✓ Causes de rotation lorsqu'elles sont connues
+        </div>
+
+    </div>
+
+
+    <button class="sub">🗣️ Interroger les collaborateurs</button>
+    <div class="subpanel">
+
+        <div class="fact">
+            <span class="label">PRINCIPE</span>
+
+            L'objectif ne serait pas de demander aux collaborateurs
+            s'ils sont d'accord avec mon analyse, mais de recueillir
+            indépendamment leur propre expérience.
+        </div>
+
+        <div class="question">
+            <span class="label">QUESTIONS OUVERTES POSSIBLES</span>
+
+            Comment décrivent-ils :<br><br>
+
+            • leur intégration ?<br>
+            • la transmission des consignes ?<br>
+            • la communication ?<br>
+            • l'organisation du rayon ?<br>
+            • leurs relations managériales ?
+        </div>
+
+        <div class="fact">
+            <span class="label">POURQUOI</span>
+
+            Si leurs réponses sont différentes de mon expérience,
+            Fanny le saura.<br><br>
+
+            Si plusieurs personnes font spontanément remonter
+            les mêmes difficultés, elle le saura également.
+        </div>
+
+    </div>
+
+
+    <button class="sub">🎯 Le résultat recherché</button>
+    <div class="subpanel">
+
+        <div class="question">
+            <span class="label">FINALITÉ</span>
+
+            Si mon expérience est isolée, les vérifications permettront
+            de le constater.
+            <br><br>
+
+            Si plusieurs collaborateurs interrogés séparément
+            décrivent spontanément des difficultés similaires,
+            cela permettra également à la direction d'en avoir connaissance.
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 7 -->
+<!-- ===================================================== -->
+
+<button class="accordion">
+    🏁 7. CONCLUSION
+</button>
+
+<div class="panel">
+
+    <div class="fact">
+        <span class="label">MA POSITION</span>
+
+        Je reconnais avoir commis certaines erreurs pendant
+        ma période d'essai et je ne demande pas l'annulation
+        de la décision prise à mon égard.
+    </div>
+
+    <div class="feeling">
+        <span class="label">DISTINCTION IMPORTANTE</span>
+
+        Je considère cependant que deux questions peuvent coexister :
+        je peux ne pas avoir répondu à toutes les attentes
+        de ma période d'essai et il peut, parallèlement,
+        exister des difficultés dans le fonctionnement
+        ou l'organisation du rayon.
+    </div>
+
+    <div class="big-mantra">
+        Ce document n'a pas vocation à demander à la direction
+        de retenir mon appréciation plutôt qu'une autre.
+        Il vise à transmettre des observations et des points
+        vérifiables afin qu'elle puisse se faire sa propre opinion.
+    </div>
+
+    <div class="question">
+        <span class="label">EN SYNTHÈSE</span>
+
+        Si mon expérience est isolée, les vérifications permettront
+        de le constater. Si elle ne l'est pas, je considère qu'il
+        était utile d'en faire part à la direction avant mon départ.
+    </div>
+
+</div>
+
+</main>
+
+
+<script>
+
+/* ACCORDÉONS PRINCIPAUX */
+
+document.querySelectorAll(".accordion").forEach(button => {
+
+    button.addEventListener("click", function() {
+
+        this.classList.toggle("active");
+
+        const panel = this.nextElementSibling;
+
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+
+    });
+
+});
+
+
+/* SOUS-ACCORDÉONS */
+
+document.querySelectorAll(".sub").forEach(button => {
+
+    button.addEventListener("click", function() {
+
+        this.classList.toggle("active");
+
+        const panel = this.nextElementSibling;
+
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
