@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/Retour_experience_Fanny_Intersport.html" }
+  ]
+}
